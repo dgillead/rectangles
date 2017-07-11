@@ -19,7 +19,7 @@ my_rectangle = {
 other_rectangle = {
   # coordinates of bottom-left corner
   'left_x' => 6,
-  'bottom_y' => 8,
+  'bottom_y' => 4,
 
   # width and height
   'width' => 10,
@@ -36,6 +36,7 @@ def get_points(my_rectangle, other_rectangle)
     intersection_rectangle['height'] = (my_rectangle['bottom_y'] + my_rectangle['height'] - intersection_rectangle['bottom_y'])
   else
     intersection_rectangle['bottom_y'] = my_rectangle['bottom_y']
+    intersection_rectangle['height'] = (other_rectangle['bottom_y'] + other_rectangle['height'] - intersection_rectangle['bottom_y'])
   end
   intersection_rectangle['width'] = (my_rectangle['left_x'] + my_rectangle['width']) - intersection_rectangle['left_x']
   p intersection_rectangle
